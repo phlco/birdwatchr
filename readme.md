@@ -1,4 +1,4 @@
-# Birds of NY
+# Birds of NY :middle-finger:
 
 ![:image](https://img1.etsystatic.com/049/0/6289898/il_fullxfull.711382185_hm60.jpg)
 
@@ -13,9 +13,9 @@ intern, reading off a Post-It note.
 She hands you the crumpled note with the following tasks
 
 - [x] Resignation Letter
-- [ ] Implement mongodb
-- [ ] when a user visits `/sightings/new` show a form to add a bird's name
-- [ ] expose an API. when a user visits `api/sightings` render all the sightings as JSON
+- [x] Implement mongodb
+- [x] when a user visits `/sightings/new` show a form to add a bird's name
+- [x] expose an API. when a user visits `api/sightings` render all the sightings as JSON
 
 # Where do we flamingo from here?
 
@@ -26,9 +26,9 @@ out her resume.
 
 You scribble down onto a Post-It note
 
-- [ ] Store date information
-- [ ] Show last 3 sightings on index
-- [ ] Add address location to form
+- [x] Store date information
+- [x] Show last 3 sightings on index
+- [x] Add address location to form
 
 # Cockatoo where are you?
 
@@ -49,7 +49,7 @@ put together a demo page that I can show to our shareholders. I'll tell them to
 go to /demo and click on a link and see all our bird data. And then I want them
 to type in an address and send back the lat/long all with AJAX."
 
-- [ ] create '/demo' page
+- [x] create '/demo' page
 - [ ] ajax the bird data and render it
 - [ ] ajax a location and geocode it
 

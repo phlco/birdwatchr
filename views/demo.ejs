@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>BirdWatchr</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/jquery/dist/jquery.min.js"></script>
+  <script src="/handlebars/handlebars.js"></script>
+  <script src="/js/main.js"></script>
+</head>
+<body>
+  <h1>Birds of NY</h1>
+
+  <button id="ajax-birds">Birds!</button>
+
+  <ul id="birds"></ul>
+
+  <script type="x-template" id="bird-template">
+    <li>
+      <span class="bird">{{sighting.bird}} last seen on <em>{{sighting.createdAt}}</em></span>
+    </li>
+  </script>
+
+  <script>
+    var template = Handlebars.compile($('#bird-template').html());
+
+    var fetchBirds = function(event){
+      $.ajax({
+        url: '/api/sightings',
+        type: 'GET',
+        dataType: 'json'
+      }).done(renderBirds);
+    }
+
+    var renderBirds = function(response) {
+      if(response.status == 200) {
+        console.log(response);
+        response.sightings.forEach(function(sighting){
+          // TODO create all HTML then append to DOM at end
+          $("#birds").append(template(sighting));
+        });
+      }
+    }
+
+    $('#ajax-birds').on('click', fetchBirds);
+  </script>
+
+</body>
+</html>
+

@@ -3,11 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <title>BirdWatchr</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/jquery/dist/jquery.min.js"></script>
   <script src="/js/main.js"></script>
 </head>
 <body>
   <h1>Birds of NY</h1>
+  <p>If you see something, say something!</p>
   <a href="/sightings/new">Spotted a bird?</a>
+  <div id="recent-sightings">
+    <h2>Recent Sightings!</h2>
+    <ul>
+      <!-- TODO format dates with moment.js -->
+      <% sightings.forEach(function(sighting){ %>
+        <li>
+          <span class="bird">
+            <%= sighting.bird %> last seen on <em><%= sighting.createdAt %></em>
+          </span>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
 </body>
 </html>
 
