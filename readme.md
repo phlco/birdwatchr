@@ -1,4 +1,4 @@
-# Birds of NY :middle-finger:
+# Birds of NY
 
 ![:image](https://img1.etsystatic.com/049/0/6289898/il_fullxfull.711382185_hm60.jpg)
 
