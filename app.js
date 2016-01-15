@@ -3,6 +3,7 @@ var app = express();
 var bodyParser = require('body-parser');
 
 // Configuration
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/bower_components'));
@@ -21,16 +22,22 @@ MongoClient.connect(mongoUrl, function(err, database) {
 
 // Routes
 app.get('/', function(req, res){
-    res.render('index');
+  res.render('index');
 })
 
 app.post('/dogs', function(req, res){
   console.log(req.body);
-  res.json({});
+  var dog = req.body;
+  console.log(req.params);
+  console.log(req.query)
+  db.collection('dogs').insert(dog, function(err, result){
+    res.json(result);
+  });
+
 });
 
 app.get('/dogs', function(req, res){
-  db.collection('dogs'),find({}).toArray(function(err, results){
+  db.collection('dogs').find({}).toArray(function(err, results){
     res.json(results);
   })
 });
